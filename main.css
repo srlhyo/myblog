@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+a {
+    color: white;
+}
+
+.btn-f {
+    padding-inline: 20px;
+    padding-block: 2px;
+}
+
+#container {
+    position: relative;
+    max-width: 750px;
+    margin: 0 auto;
+    min-height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+header h1 span {
+    color: bisque;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+main {
+    padding-bottom: 60px;
+}
+
+article {
+    margin-bottom: 40px;
+}
+
+article h2 {
+    font-size: 1.7rem;
+}
+
+article h2, article span {
+    padding-bottom: 10px;
+}
+
+article span, article p, footer p {
+    color: rgba(255,255,255,0.85)
+}
+
+article span {
+    display: inline-block;
+    font-size: .85rem;
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.6);
+    padding-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+}
+
+.login-state {
+    background-color: green;
+    padding-left: 5px;
+    border-radius: 2px;  
+}
+
+
+.edit-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.edit-post p {
+    font-size: .8rem;
+    padding-block: 10px;
+    font-style: italic;
+}
+
+.edit-post form button {
+    /* width: 10vw;
+    min-width: 100px; */
+    align-self: flex-end;
+}
+
+
+
+form input, form textarea {
+    padding-left: 5px;
+    padding-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.owner {
+    display: flex;
+    justify-content: space-between;
+}
+
+
