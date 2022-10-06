@@ -131,4 +131,14 @@ form input, form textarea {
     justify-content: space-between;
 }
 
+.post-creation {
+    display: flex;
+    flex-direction: column;
+}
+
+.time-ago {
+    margin-top: -10px;
+    font-size: .65rem;
+}
+
 

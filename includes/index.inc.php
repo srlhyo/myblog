@@ -12,12 +12,19 @@ $sql = "SELECT a.username, b.title, b.body, b.created_at
 //fetching data from the database
 
 $result = mysqli_query($conn, $sql);
+$posts = json_encode(getPosts($result));
+echo $posts;
 
-$arr_results = [];
+function getPosts($arr) {
 
-if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-        $arr_results[] = $row;
+    $arr_results = [];
+        
+    if (mysqli_num_rows($arr) > 0) {
+        while($row = mysqli_fetch_assoc($arr)) {
+            $arr_results[] = $row;
+        }
+    
     }
 
-}
+    return $arr_results;
+};

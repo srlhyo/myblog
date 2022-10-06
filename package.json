@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  }
+}

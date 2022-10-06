@@ -20,18 +20,27 @@
             </section>
         <?php } ?>
 
-        <?php  require './includes/index.inc.php'; ?>
+        <?php 
+            ob_start(); 
+            require './includes/index.inc.php'; 
+            ob_end_clean();
 
-        <?php if (!empty($arr_results)) { ?>
+            $posts = json_decode($posts, true);
+        ?>
 
-            <?php foreach($arr_results as $row) { ?>
+        <?php if (!empty($posts)) { ?>
+
+            <?php foreach($posts as $post) { ?>
                 <article>
-                    <h2><?= $row["title"] ?></h2>
+                    <h2><?= $post["title"] ?></h2>
                 <div class="owner">
-                    <span class="author"><?= $row["username"] ?></span>
-                    <span class="time"><?= date('M j, Y', strtotime($row["created_at"])); ?></span>
+                    <span class="author"><?= $post["username"] ?></span>
+                    <div class="post-creation">
+                        <span class="time"><?= date('M j, Y', strtotime($post["created_at"])); ?></span>
+                        <span class="time-ago">(1 minute ago)</span>
+                    </div>
                 </div>
-                    <p><?= $row["body"] ?></p>
+                    <p><?= $post["body"] ?></p>
                 </article>
             <?php } ?>
 
@@ -45,36 +54,6 @@
                 <span class="author">Karl11</span>
                 <span class="time">July 06, 2022</span>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda alias, cupiditate quibusdam architecto quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus. Quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus.</p>
-        </article> -->
-
-        <!-- <article>
-            <h2>-h-help -help???</h2>
-            <div class="owner">
-                <span class="author">Zodabolas</span>
-                <span class="time">Apr 22, 2022</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda alias, cupiditate quibusdam architecto quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus. Quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus.</p>
-        </article> -->
-  
-        <!-- <article>
-            <h2>Never miss completion</h2>
-            <span>March 28, 2022</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda alias, cupiditate quibusdam architecto quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus. Quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus.</p>
-        </article> -->
-        <!-- <article>
-            <h2>Diffing binarries</h2>
-            <span>February 04, 2022</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda alias, cupiditate quibusdam architecto quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus. Quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus.</p>
-        </article>
-        <article>
-            <h2>Diffing binarries</h2>
-            <span>February 04, 2022</span>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda alias, cupiditate quibusdam architecto quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus. Quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus.</p>
-        </article>
-        <article>
-            <h2>Diffing binarries</h2>
-            <span>February 04, 2022</span>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda alias, cupiditate quibusdam architecto quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus. Quis tempore magnam sapiente dolore voluptatem impedit atque praesentium sunt repudiandae nostrum aut accusantium expedita. Ab, delectus.</p>
         </article> -->
         
