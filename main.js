@@ -3,7 +3,7 @@
 var timeago = require("timeago.js");
 
 async function getPosts() {
-    let res = await fetch("/includes/index.inc.php");
+    let res = await fetch("/api/getPosts.php");
     return await res.json();
 }
 

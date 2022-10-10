@@ -2,29 +2,28 @@
 
 /** GET ALL POSTS */
 
-require "database.inc.php";
+include $_SERVER['DOCUMENT_ROOT']."/includes/database.inc.php";
 
-$sql = "SELECT a.username, b.title, b.body, b.created_at 
-        FROM users a, posts b 
-        WHERE a.id = b.user_id 
-        ORDER BY created_at DESC";
+function getPosts() {
+    global $conn;
 
-//fetching data from the database
+    $sql = "SELECT a.username, b.title, b.body, b.created_at 
+    FROM users a, posts b 
+    WHERE a.id = b.user_id 
+    ORDER BY created_at DESC";
 
-$result = mysqli_query($conn, $sql);
-$posts = json_encode(getPosts($result));
-echo $posts;
-
-function getPosts($arr) {
+    $result = mysqli_query($conn, $sql);
 
     $arr_results = [];
-        
-    if (mysqli_num_rows($arr) > 0) {
-        while($row = mysqli_fetch_assoc($arr)) {
+
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
             $arr_results[] = $row;
         }
     
     }
+
+    mysqli_close($conn);
 
     return $arr_results;
 };

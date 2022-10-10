@@ -15,7 +15,7 @@
   \*****************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// Blog, coded by Shinobi\n\nvar timeago = __webpack_require__(/*! timeago.js */ \"./node_modules/timeago.js/esm/index.js\");\n\nasync function getPosts() {\n    let res = await fetch(\"/includes/index.inc.php\");\n    return await res.json();\n}\n\ngetPosts();\n\nasync function renderTimeAgo() {\n    let posts = await getPosts();\n    let timeAgo = document.querySelectorAll('.time-ago');\n\n    posts.forEach((post, index) => {\n        timeAgo[index].innerText = timeago.format(post.created_at);\n    });\n}\n\nrenderTimeAgo();\n\n//# sourceURL=webpack:///./main.js?");
+eval("// Blog, coded by Shinobi\n\nvar timeago = __webpack_require__(/*! timeago.js */ \"./node_modules/timeago.js/esm/index.js\");\n\nasync function getPosts() {\n    let res = await fetch(\"/api/getPosts.php\");\n    return await res.json();\n}\n\ngetPosts();\n\nasync function renderTimeAgo() {\n    let posts = await getPosts();\n    let timeAgo = document.querySelectorAll('.time-ago');\n\n    posts.forEach((post, index) => {\n        timeAgo[index].innerText = timeago.format(post.created_at);\n    });\n}\n\nrenderTimeAgo();\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ }),
 

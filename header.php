@@ -10,6 +10,11 @@ session_start()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bebetter Blog</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+		integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/axios.min_v0.19.2.js"></script>
+    <script src="./js/vue_v2.6.12_dev.js"></script>
 </head>
 <body>
     <div id="container">
